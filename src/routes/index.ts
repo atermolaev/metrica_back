@@ -6,7 +6,7 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const response = {
-    auth_test: false,
+    auth: false,
   }
   res.send(JSON.stringify(response));
 });
