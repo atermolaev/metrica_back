@@ -1,5 +1,5 @@
 import express from 'express';
-import { makeSuccessResponse, getSumTwoNums } from '../utils';
+import { makeSuccessResponse, getSumTwoNums, getSubTwoNums } from '../utils';
 import _ from 'lodash';
 
 const router = express.Router();
@@ -19,6 +19,7 @@ router.get('/', function(req, res, next) {
     num1: num1Current,
     num2: num2Current,
     sum: getSumTwoNums(num1Current, num2Current),
+    sub: getSubTwoNums(num1Current, num2Current),
   }
   res.send(JSON.stringify(response));
 });
