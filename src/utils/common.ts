@@ -10,3 +10,7 @@ export const getSumTwoNums = (num1: string, num2: string) => {
 export const getSubTwoNums = (num1: string, num2: string) => {
     return parseFloat(num1) - parseFloat(num2);
 }
+
+export const getMultiTwoNums = (num1: string, num2: string) => {
+    return parseFloat(num1) * parseFloat(num2);
+}
