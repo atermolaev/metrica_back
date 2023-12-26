@@ -1,5 +1,5 @@
 import express from 'express';
-import { makeSuccessResponse, getSumTwoNums, getSubTwoNums, getMultiTwoNums } from '../utils';
+import { makeSuccessResponse, getSumTwoNums, getSubTwoNums, getMultiTwoNums, getNumExponentTwo } from '../utils';
 import _ from 'lodash';
 
 const router = express.Router();
@@ -21,6 +21,8 @@ router.get('/', function(req, res, next) {
     sum: getSumTwoNums(num1Current, num2Current),
     sub: getSubTwoNums(num1Current, num2Current),
     mult: getMultiTwoNums(num1Current, num2Current),
+    num1_exp: getNumExponentTwo(num1Current),
+    num2_exp: getNumExponentTwo(num2Current),
   }
   res.send(JSON.stringify(response));
 });

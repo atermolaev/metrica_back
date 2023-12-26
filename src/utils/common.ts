@@ -14,3 +14,7 @@ export const getSubTwoNums = (num1: string, num2: string) => {
 export const getMultiTwoNums = (num1: string, num2: string) => {
     return parseFloat(num1) * parseFloat(num2);
 }
+
+export const getNumExponentTwo = (num: string) => {
+    return Math.pow(parseFloat(num), 2);
+}
