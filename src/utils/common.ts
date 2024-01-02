@@ -18,3 +18,7 @@ export const getMultiTwoNums = (num1: string, num2: string) => {
 export const getNumExponentTwo = (num: string) => {
     return Math.pow(parseFloat(num), 2);
 }
+
+export const getNumEXponentSmth = (num: string, exp: string) => {
+    return Math.pow(parseFloat(num), parseInt(exp));
+}
