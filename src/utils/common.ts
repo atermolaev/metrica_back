@@ -22,3 +22,7 @@ export const getNumExponentTwo = (num: string) => {
 export const getNumEXponentSmth = (num: string, exp: string) => {
     return Math.pow(parseFloat(num), parseInt(exp));
 }
+
+export const getNumSqrt = (num: string) => {
+    return Math.sqrt(parseFloat(num));
+}
