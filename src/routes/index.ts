@@ -1,6 +1,55 @@
 import express from 'express';
 import { makeSuccessResponse, getSumTwoNums, getSubTwoNums, getMultiTwoNums, getNumExponentTwo, getNumEXponentSmth, getNumSqrt } from '../utils';
 import _ from 'lodash';
+import { Sequelize, DataTypes } from 'sequelize';
+
+const sequelize = new Sequelize('metrica', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
+
+const User = sequelize.define('User', {
+  firstName: {
+    type: DataTypes.STRING
+  },
+  lastName: {
+    type: DataTypes.STRING
+  },
+  email: {
+    type: DataTypes.STRING
+  },
+  login: {
+    type: DataTypes.STRING
+  },
+  pass: {
+    type: DataTypes.STRING
+  },
+  createdAt: {
+    allowNull: false,
+    type: DataTypes.DATE
+  },
+  updatedAt: {
+    allowNull: false,
+    type: DataTypes.DATE
+  }
+})
+
+
+try {
+  sequelize.authenticate()
+  console.log('Соединение с БД было успешно установлено')
+} catch (e) {
+  console.log('Невозможно выполнить подключение к БД: ', e)
+}
+
+User.findAll({
+  where: {
+    login: 'demouser'
+  }
+}).then((result) => {
+  console.log(result[0].dataValues);
+});
+
 
 interface IResponse {
   auth: boolean;
