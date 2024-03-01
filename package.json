@@ -1,10 +1,11 @@
 {
   "name": "metrica-back",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "ts-node ./src/bin/www.ts",
-    "dev": "ts-node-dev ./src/bin/www.ts"
+    "dev": "ts-node-dev ./src/bin/www.ts",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -16,7 +17,8 @@
     "http-errors": "~1.6.3",
     "lodash": "^4.17.21",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "sequelize": "^6.37.1"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
@@ -30,6 +32,10 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.47",
     "@types/pug": "^2.0.8",
+    "@types/sequelize": "^4.28.20",
+    "cross-env": "^7.0.3",
+    "mysql2": "^3.9.2",
+    "sequelize-cli": "^6.6.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
