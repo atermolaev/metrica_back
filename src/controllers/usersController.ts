@@ -1,4 +1,5 @@
 import AuthController from "./authController";
+import { v4 as uuidv4 } from 'uuid';
 
 export default class UsersControler {
     private username: string;
@@ -22,5 +23,9 @@ export default class UsersControler {
         } else {
             return false;
         }
+    }
+
+    public createToken() {
+        return uuidv4();
     }
 }

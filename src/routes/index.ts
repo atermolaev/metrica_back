@@ -14,18 +14,24 @@ import UsersControler from '../controllers/usersController';
 
 const router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   // const response = {};
   // res.send(JSON.stringify(req));
-  res.send({'test': 'test'});
+  res.send({ 'test': 'test' });
 });
 
-router.post('/auth', function(req, res, next) {
+router.post('/auth', function (req, res, next) {
   const cntUser = new UsersControler(req.body.login, req.body.pass)
   const authStatus = cntUser.checkAuth();
+  const newToken = cntUser.createToken();
 
 
-  res.send({'status': 'success', 'auth': authStatus});
+  res.send({
+    'status': 'success', 'body': {
+      'auth': authStatus,
+      'token': newToken,
+    },
+  });
 });
 
 module.exports = router;
