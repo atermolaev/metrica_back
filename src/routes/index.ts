@@ -17,7 +17,7 @@ const router = express.Router();
 router.get('/', function (req, res, next) {
   // const response = {};
   // res.send(JSON.stringify(req));
-  res.send({ 'test': 'test1' });
+  res.send({ 'test': 'test' });
 });
 
 router.post('/auth', function (req, res, next) {
